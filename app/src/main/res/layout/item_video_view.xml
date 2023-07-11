@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="videoUrl"
+            type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <MediaController
+            android:id="@+id/mediaController"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/videoView"
+            android:visibility="visible"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@id/videoView"
+            app:layout_constraintStart_toStartOf="@id/videoView"
+            app:layout_constraintTop_toBottomOf="@+id/videoView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

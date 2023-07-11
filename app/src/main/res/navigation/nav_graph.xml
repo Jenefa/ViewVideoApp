@@ -1,0 +1,18 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/nav_graph"
+    app:startDestination="@id/fragment_view_video">
+
+    <fragment
+        android:id="@id/fragment_view_video"
+        android:name="com.example.viewvideoapp.ui.viewvideo.view.ViewVideoFragment"
+        android:label="View Video"
+        tools:layout="@layout/fragment_view_video" />
+
+    <fragment
+        android:id="@id/fragment_my_slider"
+        android:name="com.example.viewvideoapp.ui.myslider.view.MySliderFragment"
+        android:label="Slider"
+        tools:layout="@layout/fragment_my_slider" />
+</navigation>
