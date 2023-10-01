@@ -24,23 +24,16 @@ class VideoAdapter(private val videos: List<Video>) :
         return videos.size
     }
 
-    inner class VideoViewHolder(binding: ItemVideoViewBinding) :
+    inner class VideoViewHolder(private val binding: ItemVideoViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        private val binding: ItemVideoViewBinding
-        private val mediaController: MediaController
-
-
-        init {
-            this.binding = binding
-            mediaController = MediaController(this.binding.root.context)
-
-        }
-
         fun bind(videoUrl: String) {
+            // Set media controller for play, pause, etc. options
+            val mediaController = MediaController(binding.root.context)
+            mediaController.setAnchorView(binding.videoView)
+            binding.videoView.setMediaController(mediaController)
+
             with(binding) {
                 videoView.setVideoURI(Uri.parse(videoUrl))
-                mediaController.setAnchorView(videoView)
-                videoView.setMediaController(mediaController)
             }
         }
     }

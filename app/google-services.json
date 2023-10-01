@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "709338616135",
+    "project_id": "viewvideoapp",
+    "storage_bucket": "viewvideoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709338616135:android:265e18e1054d6953553c62",
+        "android_client_info": {
+          "package_name": "com.example.viewvideoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709338616135-ikosphr4hoik3cea57ut00ciae337pn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN8cqqvkQwAy1rjwJ38c-8nOgGmQfXTuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709338616135-ikosphr4hoik3cea57ut00ciae337pn6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

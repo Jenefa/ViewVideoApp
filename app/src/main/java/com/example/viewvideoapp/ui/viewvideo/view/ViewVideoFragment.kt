@@ -9,20 +9,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.viewvideoapp.R
-import com.example.viewvideoapp.app.ViewVideoApp
-import com.example.viewvideoapp.databinding.ActivityMainBinding
 import com.example.viewvideoapp.databinding.FragmentViewVideoBinding
 import com.example.viewvideoapp.ui.base.view.BaseFragment
-import com.example.viewvideoapp.ui.main.viewmodel.MainViewModelFactory
 import com.example.viewvideoapp.ui.viewvideo.viewmodel.ViewVideoViewModel
 import com.example.viewvideoapp.ui.viewvideo.viewmodel.ViewVideoViewModelFactory
-import com.example.viewvideoapp.viewmodelfactory.DIViewModelFactory
 import org.kodein.di.DI
 import org.kodein.di.DIAware
 import org.kodein.di.android.x.closestDI
-import org.kodein.di.direct
 import org.kodein.di.instance
-
 
 class ViewVideoFragment : BaseFragment(), DIAware {
     private lateinit var binding: FragmentViewVideoBinding
@@ -45,12 +39,15 @@ class ViewVideoFragment : BaseFragment(), DIAware {
         val viewVideoViewModelFactory: ViewVideoViewModelFactory by instance()
         viewVideoViewModel = ViewModelProvider(this, viewVideoViewModelFactory)[ViewVideoViewModel::class.java]
         binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewVideoFragment = this
 
         val layoutManger = LinearLayoutManager(requireActivity())
         binding.rvVideo.layoutManager = layoutManger
         binding.rvVideo.adapter = VideoAdapter(viewVideoViewModel.getVideoList())
+    }
 
-
+    fun onTestCrashClick() {
+        throw RuntimeException("Test Crash") // Force a crash
     }
 
 }
